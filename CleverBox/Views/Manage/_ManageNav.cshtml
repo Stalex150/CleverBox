@@ -1,0 +1,12 @@
+﻿@using CleverBox.Views.Manage
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+
+<a asp-action="ChangePassword">Password</a>
+    @if (hasExternalLogins)
+    {
+    }
+</ul>
+

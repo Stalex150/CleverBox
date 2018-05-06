@@ -1,0 +1,25 @@
+@using Microsoft.AspNetCore.Identity
+@using CleverBox.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var controller = ViewContext.RouteData.Values["Controller"].ToString();
+
+    @if (controller != "Test")
+    {
+        <h3 class="masthead-brand nav-title">Clever Box</h3>
+        @await Html.PartialAsync("_SignedInNav")
+    }
+}
+else
+{
+    <h3 class="masthead-brand nav-title">Clever Box</h3>
+
+    @await Html.PartialAsync("_SignedOutNav")
+}
+

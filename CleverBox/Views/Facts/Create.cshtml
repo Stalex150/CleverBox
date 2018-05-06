@@ -1,0 +1,22 @@
+﻿@model CleverBox.Models.Fact
+
+<div class="topmargin">
+    <h2>Create</h2>
+
+    <div class="col-md-7 automargin">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Key" class="form-control form-control-lg" autocomplete="off" placeholder="Key" autofocus />
+                <span asp-validation-for="Key" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Value" class="form-control form-control-lg" autocomplete="off" placeholder="Value" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-lg btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

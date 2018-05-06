@@ -1,0 +1,201 @@
+﻿body {
+    background-image: url('/');
+    background-repeat: repeat;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.nav-logout {
+    margin-left: 1rem;
+}
+
+.nav-title {
+    margin-right: 4rem;
+    margin-left: 4rem;
+}
+
+.checkbox-padding {
+    padding-top: 10px;
+}
+
+.input-padding {
+    margin-bottom: 0.5rem;
+}
+
+.icon {
+    height: 15rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4rem;
+}
+
+.automargin {
+    margin: auto;
+}
+
+.topmargin {
+    margin-top: 3rem;
+}
+
+.maxwidth {
+    max-width: 13rem;
+}
+
+.updatemessage {
+    padding-right: 1rem;
+}
+
+.t-input {
+    margin: 2rem auto 1rem auto;
+    max-width: 25rem;
+}
+
+.automargin-vertical {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.right-padding-5 {
+    padding-right: 5rem;
+}
+
+.right-padding-6 {
+    padding-right: 6rem;
+}
+
+.right-padding-2 {
+    padding-right: 2.5rem;
+}
+
+.evaluate-input {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.background-result {
+    background-color: #464646;
+    border-radius: 0.75rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.youransver-top-margin {
+    margin-top: 2rem;
+}
+
+.evaluate-next-button {
+    margin: 1rem;
+}
+
+.test-margin-top {
+    margin-top: 7rem;
+}
+
+.automargin-left {
+    margin-left: auto;
+}
+
+.home-stats {
+    margin: 1rem;
+    height: 4rem;
+    width: 20rem;
+    font-size: larger;
+    font-weight: lighter;
+    padding: 1rem 1rem 1rem 1rem;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+.grey-background-color {
+    background-color: #464646;
+}
+
+.green-background-color {
+    background-color: #8bc14a;
+}
+
+.left-right-automargin {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.start-button {
+    display: block;
+}
+
+.edit-icon {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    width: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.delete-icon {
+    margin-top: 0.5rem;
+    width: 2.2rem;
+    height: auto;
+}
+
+/*TABLES*/
+table {
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+    padding: 0.5rem;
+    background-color: #464646;
+}
+
+    td:first-child {
+        border-top-left-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+    }
+
+    td:last-child {
+        border-top-right-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+    }
+
+/*Bootstrap EDIT*/
+.form-control.is-invalid {
+    background-color: #e44e5a;
+}
+
+.form-control.is-valid {
+    background-color: #8bc14a;
+}

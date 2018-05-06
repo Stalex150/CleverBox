@@ -1,0 +1,37 @@
+﻿@model CleverBox.Models.Fact
+
+<div class="topmargin">
+    <h2>Edit</h2>
+
+    <div class="col-md-7 automargin">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" class="form-control form-control-lg" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="UserId" class="form-control form-control-lg" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <input asp-for="Key" class="form-control form-control-lg" autocomplete="off" placeholder="Key" />
+                <span asp-validation-for="Key" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Value" class="form-control form-control-lg" autocomplete="off" placeholder="Value" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-lg btn-default" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="RepetitionLevel" class="form-control form-control-lg" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="NextTime" class="form-control form-control-lg" autocomplete="off" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

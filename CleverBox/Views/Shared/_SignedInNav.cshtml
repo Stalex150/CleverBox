@@ -1,0 +1,11 @@
+﻿<nav class="nav nav-masthead justify-content-center">
+    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+    <a class="nav-link" asp-controller="Facts" asp-action="Index">List Fact</a>
+    <a class="nav-link" asp-controller="Facts" asp-action="Create">Create Facts</a>
+    <a class="nav-link" asp-controller="Manage" asp-action="Index" title="Manage">Profile</a>
+    <div class="nav-logout">
+        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+            <button type="submit" class="nav-link btn btn-link navbar-btn">Log out</button>
+        </form>
+    </div>
+</nav>

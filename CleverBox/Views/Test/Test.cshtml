@@ -1,0 +1,54 @@
+﻿@model TestViewModel
+
+<div class="automargin-vertical test-margin-top">
+    <h1 class="font-weight-light">@Model.Fact.Key</h1>
+    <form asp-controller="Test" asp-action="Evaluation" role="form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Fact.Id" name="factId" />
+        <div class="form-group">
+            <input asp-for="InputText" class="form-control form-control-lg col-md-12 automargin" name="input" autocomplete="off" autofocus />
+        </div>
+        <span asp-validation-for="InputText" class="text-danger"></span>
+        <button type="submit" class="btn btn-lg btn-light">Next</button>
+    </form>
+</div>
+
+
+@*<button asp-controller="Test" asp-action="EditRepetanceLevel" asp-route-id="@Model.Id" class="btn btn-default">Try it</button>*@
+
+
+
+@*<script>
+        var secondClick = false;
+        var modelFacts = [];
+        modelFacts = @Html.Raw(Json.Serialize(Model));
+
+        //VALIDATION
+        function validation() {
+            var isNull = document.getElementById("input").innerHTML == "";
+
+            console.log("second click: " + secondClick);
+            console.log("is null: " + isNull)
+
+            if (isNull && !secondClick) {
+                document.getElementById("button").innerHTML = "I don't know."
+                secondClick = true;
+            }
+
+            else
+                tryIt();
+        }
+
+        //TRY IT
+        function tryIt() {
+            var keyResult = modelFacts.map(a => a.key)[0];
+            document.getElementById("value").innerHTML = keyResult;
+            modelFacts.shift();
+
+            if (document.getElementById("button").innerHTML == "I don't know.")
+                document.getElementById("button").innerHTML = "Try it"
+
+            secondClick = false;
+        }
+
+    </script>*@

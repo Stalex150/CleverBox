@@ -1,0 +1,26 @@
+﻿@model HomeViewModel
+
+<div class="topmargin">
+    <a asp-controller="Test" asp-action="Test" class="home-stats start-button left-right-automargin green-background-color row">Start!</a>
+</div>
+
+<div class="left-right-automargin">
+    <div class="home-stats grey-background-color row">
+        Your points:
+        <div class="right-padding-2 automargin-left">
+            @Model.UserPoints
+        </div>
+    </div>
+    <div class="home-stats grey-background-color row">
+        Learned:
+        <div class="right-padding-2 automargin-left">
+            @Model.LearnedFacts / @Model.AllFacts
+        </div>
+    </div>
+    <div class="home-stats grey-background-color row">
+        In long term memory:
+        <div class="right-padding-2 automargin-left">
+            @Model.FactInMemory
+        </div>
+    </div>
+</div>

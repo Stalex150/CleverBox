@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FactViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Your memory</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(FactViewModel => FactViewModel.Key)
+            </th>
+            <th>
+                @Html.DisplayNameFor(FactViewModel => FactViewModel.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(FactViewModel => FactViewModel.RepetitionLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(FactViewModel => FactViewModel.NextTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Key)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RepetitionLevel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NextTime)
+                </td>
+                <td>
+                    <div class="edit-icon">
+                    <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/images/icon/edit.png" class="edit-icon" /></a>
+                    </div>
+                </td>
+                <td>
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="@item.Id" name="id" />
+                        <input type="image" src="~/images/icon/delete.png" class="delete-icon" />
+                    </form>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

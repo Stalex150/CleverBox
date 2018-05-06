@@ -1,0 +1,44 @@
+﻿@model EvaluateViewModel
+
+@{
+    ViewData["Title"] = "Evaluation";
+}
+<div class="automargin">
+    <div class="row background-result">
+        <div class="right-padding-6">
+            <h5>Key</h5>
+        </div>
+        <h1 class="font-weight-light">@Model.Key</h1>
+    </div>
+    <div class="row background-result">
+        <div class="right-padding-5">
+            <h5>Value</h5>
+        </div>
+        <h1 class="font-weight-light">@Model.Value</h1>
+    </div>
+</div>
+
+<div class="youransver-top-margin automargin">
+    <h5>Your ansver</h5>
+    <input id="input" class="form-control form-control-lg col-md-auto automargin evaluate-input" disabled value="@Model.Input" />
+</div>
+
+@*<a asp-controller="Test" asp-action="Test" class="btn btn-light">Next</a>*@
+<div class="evaluate-next-button">
+    <form asp-controller="Test" asp-action="Test" method="get">
+        <button type="submit" class="btn btn-lg btn-info" autofocus>Next</button>
+    </form>
+</div>
+
+<script>
+    var value = @Html.Raw(Json.Serialize(Model.Value))
+
+    var input = @Html.Raw(Json.Serialize(Model.Input))
+
+    if (value == input) {
+        document.getElementById("input").classList.add("is-valid")
+    }
+    else {
+        document.getElementById("input").classList.add("is-invalid")
+    }
+</script>

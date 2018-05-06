@@ -1,0 +1,12 @@
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\bin\Debug\netcoreapp2.0\CleverBox.deps.json
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\bin\Debug\netcoreapp2.0\CleverBox.runtimeconfig.json
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\bin\Debug\netcoreapp2.0\CleverBox.runtimeconfig.dev.json
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\bin\Debug\netcoreapp2.0\CleverBox.dll
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\bin\Debug\netcoreapp2.0\CleverBox.pdb
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\obj\Debug\netcoreapp2.0\CleverBox.csproj.CoreCompileInputs.cache
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\obj\Debug\netcoreapp2.0\CleverBox.AssemblyInfoInputs.cache
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\obj\Debug\netcoreapp2.0\CleverBox.AssemblyInfo.cs
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\obj\Debug\netcoreapp2.0\CleverBox.dll
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\obj\Debug\netcoreapp2.0\CleverBox.pdb
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Lukáš\source\repos\CleverBox\CleverBox\obj\Debug\netcoreapp2.0\CleverBox.csprojResolveAssemblyReference.cache
