@@ -31,9 +31,9 @@
 </div>
 
 <script>
-    var value = @Html.Raw(Json.Serialize(Model.Value))
+    var value = @Html.Raw(Json.Serialize(Model.Value));
 
-    var input = @Html.Raw(Json.Serialize(Model.Input))
+    var input = @Html.Raw(Json.Serialize(Model.Input));
 
     if (value == input) {
         document.getElementById("input").classList.add("is-valid")

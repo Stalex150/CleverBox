@@ -29,7 +29,6 @@ namespace CleverBox.Controllers
 
         }
 
-        // GET: Facts
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -74,7 +73,6 @@ namespace CleverBox.Controllers
             return View(factViewList);
         }
 
-        // GET: Facts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -95,16 +93,11 @@ namespace CleverBox.Controllers
             return View(fact);
         }
 
-        // GET: Facts/Create
         public IActionResult Create()
         {
             return View();
         }
 
-
-        // POST: Facts/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Key,Value")] Fact CurFact)
@@ -130,7 +123,6 @@ namespace CleverBox.Controllers
             return View(fact);
         }
 
-        // GET: Facts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -148,9 +140,6 @@ namespace CleverBox.Controllers
             return View(fact);
         }
 
-        // POST: Facts/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,UserId,Key,Value,RepetitionLevel,NextTime")] Fact fact)
@@ -183,25 +172,6 @@ namespace CleverBox.Controllers
             return View(fact);
         }
 
-        // GET: Facts/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var fact = await _context.Facts
-        //        .SingleOrDefaultAsync(m => m.Id == id);
-        //    if (fact == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(fact);
-        //}
-
-        // POST: Facts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)

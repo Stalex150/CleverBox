@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CleverBox.Data;
@@ -77,7 +76,6 @@ namespace CleverBox.Controllers
 
             fact.NextTime = SetDate(fact.RepetitionLevel);
 
-
             if (ModelState.IsValid)
             {
                 try
@@ -88,6 +86,14 @@ namespace CleverBox.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
+                    if (!FactExists(factId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
             }
 
@@ -95,12 +101,7 @@ namespace CleverBox.Controllers
 
             int daySpan = (int)Math.Round((decimal)span.TotalDays);
 
-            string daysTo = "";
-
-            if (daySpan == 0)
-                daysTo = "Now";
-            else
-                daysTo = daySpan.ToString();
+            string daysTo = (daySpan == 0) ? "Now" : daySpan.ToString();
 
             var evaluateModel = new EvaluateViewModel
             {
@@ -113,49 +114,14 @@ namespace CleverBox.Controllers
             return View(evaluateModel);
         }
 
-        [NonAction]
         private DateTime SetDate(int repLevel)
         {
-            DateTime date = DateTime.Now;
+            return DateTime.Now.AddDays(2 * repLevel);
+        }
 
-            switch (repLevel)
-            {
-                case 0:
-                    date = date.AddDays(2 * 0);
-                    break;
-                case 1:
-                    date = date.AddDays(2 * 1);
-                    break;
-                case 2:
-                    date = date.AddDays(2 * 2);
-                    break;
-                case 3:
-                    date = date.AddDays(3 * 3);
-                    break;
-                case 4:
-                    date = date.AddDays(4 * 4);
-                    break;
-                case 5:
-                    date = date.AddDays(5 * 5);
-                    break;
-                case 6:
-                    date = date.AddDays(6 * 6);
-                    break;
-                case 7:
-                    date = date.AddDays(7 * 7);
-                    break;
-                case 8:
-                    date = date.AddDays(8 * 8);
-                    break;
-                case 9:
-                    date = date.AddDays(9 * 9);
-                    break;
-                case 10:
-                    date = date.AddDays(10 * 10);
-                    break;
-            }
-
-            return date;
+        private bool FactExists(int id)
+        {
+            return _context.Facts.Any(e => e.Id == id);
         }
     }
 }
